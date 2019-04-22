@@ -13,7 +13,9 @@
     "meteor-node-stubs": "~0.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0"
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "simpl-schema": "^1.4.2"
   },
   "meteor": {
     "mainModule": {
