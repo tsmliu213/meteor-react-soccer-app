@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { Players } from "../api/players";
+import { Meteor } from "meteor/meteor";
 
 export class New extends React.Component {
   constructor(props) {
@@ -22,7 +23,8 @@ export class New extends React.Component {
       blockingAbilities: this.refs.blockingAbilities.value,
       gameStrategy: this.refs.gameStrategy.value,
       playmakingRisks: this.refs.playmakingRisks.value,
-      notes: this.refs.notes.value
+      notes: this.refs.notes.value,
+      owner: Meteor.userId()
     });
 
     console.log("Success player submitted!");
