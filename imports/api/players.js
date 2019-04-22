@@ -7,13 +7,13 @@ const PlayerSchema = new SimpleSchema({
   name: { type: String },
   team: { type: String },
   ballManipulation: { type: Number, defaultValue: 0 },
-  kickingAbilities: { type = Number, default: 0 },
-  passingAbilities: { type = Number, default: 0 },
-  duelTackling: { type = Number, default: 0 },
-  blockingAbilities: { type = Number, default: 0 },
-  gameStrategy: { type = Number, default: 0 },
-  playmakingRisks: { type = Number, default: 0 },
+  kickingAbilities: { type: Number, defaultValue: 0 },
+  passingAbilities: { type: Number, defaultValue: 0 },
+  duelTackling: { type: Number, defaultValue: 0 },
+  blockingAbilities: { type: Number, defaultValue: 0 },
+  gameStrategy: { type: Number, defaultValue: 0 },
+  playmakingRisks: { type: Number, defaultValue: 0 },
   notes: { type: String, optional: true }
-})
+});
 
 Players.attachSchema(PlayerSchema);
