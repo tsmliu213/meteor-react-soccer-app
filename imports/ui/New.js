@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { Players } from "../api/players";
 import { Meteor } from "meteor/meteor";
+import { AlertError } from "material-ui/svg-icons";
 
 export class New extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export class New extends React.Component {
   submitPlayer(event) {
     event.preventDefault();
 
-    Players.insert({
+    let player = {
       name: this.refs.name.value,
       team: this.refs.name.value,
       ballManipulation: this.refs.ballManipulation.value,
@@ -24,12 +25,18 @@ export class New extends React.Component {
       gameStrategy: this.refs.gameStrategy.value,
       playmakingRisks: this.refs.playmakingRisks.value,
       notes: this.refs.notes.value,
+      createdAt: new Date(),
       owner: Meteor.userId()
+    };
+
+    Meteor.call("insertPlayer", player, error => {
+      if (error) {
+        alert("Oops something went wrong: " + error.reason);
+      } else {
+        alert("Player added");
+        this.props.history.push("/");
+      }
     });
-
-    console.log("Success player submitted!");
-
-    this.props.history.push("/");
   }
 
   render() {

@@ -6,3 +6,9 @@ Meteor.startup(() => {
     return Players.find({});
   });
 });
+
+Meteor.methods({
+  insertPlayer: function(player) {
+    Players.insert(player);
+  }
+});
