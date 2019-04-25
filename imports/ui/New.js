@@ -21,6 +21,7 @@ export class New extends React.Component {
       kickingAbilities: this.refs.kickingAbilities.value,
       passingAbilities: this.refs.passingAbilities.value,
       duelTackling: this.refs.duelTackling.value,
+      fieldCoverage: this.refs.fieldCoverage,
       blockingAbilities: this.refs.blockingAbilities.value,
       gameStrategy: this.refs.gameStrategy.value,
       playmakingRisks: this.refs.playmakingRisks.value,
